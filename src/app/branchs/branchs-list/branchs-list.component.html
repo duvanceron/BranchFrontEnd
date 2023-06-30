@@ -1,1 +1,38 @@
-<p>branchs-list works!</p>
+<h2>Lista De Sucursales</h2>
+<app-generic-list [list]="branchs">
+    <ng-container content>
+        <table mat-table [dataSource]="branchs" class="mat-elevation-z8 table-index">
+            <ng-container matColumnDef="codeBranch">
+                <th mat-header-cell *matHeaderCellDef> Código</th>
+                <td mat-cell *matCellDef="let element"> {{element.codeBranch}} </td>
+            </ng-container>
+            <ng-container matColumnDef="descriptionBranch">
+                <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                <td mat-cell *matCellDef="let element"> {{element.descriptionBranch}} </td>
+            </ng-container>
+            <ng-container matColumnDef="adressBranch">
+                <th mat-header-cell *matHeaderCellDef> Dirección </th>
+                <td mat-cell *matCellDef="let element"> {{element.adressBranch}} </td>
+            </ng-container>
+            <ng-container matColumnDef="identificationBranch">
+                <th mat-header-cell *matHeaderCellDef> Identificación </th>
+                <td mat-cell *matCellDef="let element"> {{element.identificationBranch}}</td>
+            </ng-container>
+            <ng-container matColumnDef="dateBranch">
+                <th mat-header-cell *matHeaderCellDef> Fecha de Creacion </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateBranch| date:"MM/dd/yy"}} </td>
+            </ng-container>
+            <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef><mat-icon>settings</mat-icon><mat-icon>settings</mat-icon></th>
+                <td mat-cell *matCellDef="let element">
+                    <a href="" mat-flat-button color="primary">Edit</a>
+                    <button mat-flat-button color="warn" type="button">
+                        Delete
+                    </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </ng-container>
+</app-generic-list>

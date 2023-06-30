@@ -12,6 +12,13 @@ import { BranchsListComponent } from './branchs/branchs-list/branchs-list.compon
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { GenericListComponent } from './utilities/generic-list/generic-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { CoinsFormComponent } from './coins/coins-form/coins-form.component';
+import { CoinsCreateComponent } from './coins/coins-create/coins-create.component';
+import { CoinsListComponent } from './coins/coins-list/coins-list.component';
+import { CoinsEditComponent } from './coins/coins-edit/coins-edit.component';
+import { BranchsEditComponent } from './branchs/branchs-edit/branchs-edit.component'; 
 
 @NgModule({
   declarations: [
@@ -19,7 +26,13 @@ import { MaterialModule } from './material/material.module';
     BranchsCreateComponent,
     BranchsFormComponent,
     BranchsListComponent,
-    MenuComponent
+    MenuComponent,
+    GenericListComponent,
+    CoinsFormComponent,
+    CoinsCreateComponent,
+    CoinsListComponent,
+    CoinsEditComponent,
+    BranchsEditComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +41,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    MatTableModule
 
   ],
   providers: [],

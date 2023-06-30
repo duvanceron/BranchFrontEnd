@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BranchsFormComponent implements OnInit {
   form: any = {};
-  error :string;
+  error: string;
   @Input()
   model: branchCreateDTO;
 
@@ -17,24 +17,24 @@ export class BranchsFormComponent implements OnInit {
   errorArray: string[] = [];
   @Output()
   onSubmit: EventEmitter<branchCreateDTO> = new EventEmitter<branchCreateDTO>();
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       DescriptionBranch: [
         '',
         {
-          validators: [Validators.required,Validators.maxLength(250)],
+          validators: [Validators.required, Validators.maxLength(250)],
         },
       ],
       AdressBranch: [
         '',
         {
-          validators: [Validators.required,Validators.maxLength(250)],
+          validators: [Validators.required, Validators.maxLength(250)],
         },
       ],
       IdentificationBranch: [
         '',
         {
-          validators: [Validators.required,Validators.maxLength(50)],
+          validators: [Validators.required, Validators.maxLength(50)],
         },
       ],
       DateBranch: [
@@ -53,21 +53,21 @@ export class BranchsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.model!== undefined){
+    if (this.model !== undefined) {
       this.form.patchValue(this.model);
     }
   }
-  getErrorName(){
-    let field = this.form.get('DescriptionBranch');  
+  getErrorName() {
+    let field = this.form.get('DescriptionBranch');
     this.error = this.getErrorField(field);
-    return  this.error ; 
+    return this.error;
   }
-  getErrorAdress(){
-    let field = this.form.get('AdressBranch');  
+  getErrorAdress() {
+    let field = this.form.get('AdressBranch');
     this.error = this.getErrorField(field);
-    return  this.error ; 
+    return this.error;
   }
-  getErrorField( field:any) :string {
+  getErrorField(field: any): string {
     if (field?.hasError('required')) {
       return 'the field is required';
     }
@@ -76,7 +76,9 @@ export class BranchsFormComponent implements OnInit {
     }
     return '';
   }
-
+  isDateBeforeToday(date) {
+    return new Date(date.toDateString()) < new Date(new Date().toDateString());
+  }
 
   saveChanges() {
     this.onSubmit.emit(this.form.value);

@@ -1,0 +1,36 @@
+<h2>Lista De Monedas</h2>
+<app-generic-list [list]="coins">
+  <ng-container content>
+    <table mat-table [dataSource]="coins" class="mat-elevation-z8">
+      <ng-container matColumnDef="idCoin">
+        <th mat-header-cell *matHeaderCellDef>Código</th>
+        <td mat-cell *matCellDef="let element">{{ element.idCoin }}</td>
+      </ng-container>
+      <ng-container matColumnDef="nameCoin">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.nameCoin }}</td>
+      </ng-container>
+      <ng-container matColumnDef="descriptionCoin">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.descriptionCoin }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef><mat-icon>settings</mat-icon><mat-icon>settings</mat-icon></th>
+        <td mat-cell *matCellDef="let element">
+          <a href="" mat-flat-button color="primary">Edit</a>
+          <button
+            mat-flat-button
+            color="warn"
+            type="button"
+          >
+            Delete
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </ng-container>
+</app-generic-list>

@@ -1,0 +1,14 @@
+<div *ngIf="!list" class="loader-back">
+  <span class="loader"></span>
+</div>
+
+<div *ngIf="list?.length === 0">
+  <span #empty><ng-content select="[empty]"></ng-content></span>
+  <span *ngIf="!empty.innerHTML.trim()">
+    <p>No hay datos para visualizar</p>
+  </span>
+</div>
+
+<ng-container *ngIf="list && list.length > 0">
+  <ng-content select="[content]"> </ng-content>
+</ng-container>

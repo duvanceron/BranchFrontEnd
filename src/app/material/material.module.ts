@@ -28,10 +28,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSelectModule,
     MatCheckboxModule ,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class MaterialModule { }

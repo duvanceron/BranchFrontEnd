@@ -1,0 +1,25 @@
+<form [formGroup]="form" (submit)="saveChanges()">
+     <mat-form-field appearance="outline">
+      <mat-label>Nombre Moneda</mat-label>
+      <input formControlName="NameCoin" matInput />
+      <mat-error *ngIf="form.invalid">{{ getErrorName() }}</mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Descripción</mat-label>
+      <input formControlName="DescriptionCoin" matInput />
+      <mat-icon matSuffix>book</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <input formControlName="StateCoin" matInput />
+      <mat-icon matSuffix>check_circle</mat-icon>
+    </mat-form-field>  
+    <div>
+      <button mat-flat-button color="primary" [disabled]="form.invalid">
+        Save Changes
+      </button>
+      <a mat-stroked-button routerLink="/branchs"> Cancel </a>
+    </div>
+  </form>
+  

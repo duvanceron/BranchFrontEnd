@@ -9,6 +9,6 @@ export interface branchDTO {
   DescriptionBranch: string;
   AdressBranch: string;
   IdentificationBranch: string;
-  // DateBranch:Date;
-  // FKMoneyBranch:number;
+  DateBranch:Date;
+  FKMoneyBranch:number;
 }

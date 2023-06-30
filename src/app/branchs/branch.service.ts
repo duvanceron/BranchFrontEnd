@@ -18,4 +18,12 @@ export class BranchService {
     return this.http.post<branchDTO[]>(this.apiURL,branch);
     
   }
+  public getById(id:number):Observable<branchDTO>{
+    return this.http.get<branchDTO>(`${this.apiURL}/${id}`);
+    
+  }
+  public edit(id:number,branch:branchCreateDTO){
+    return this.http.put(`${this.apiURL}/${id}`,branch);
+    
+  }
 }
