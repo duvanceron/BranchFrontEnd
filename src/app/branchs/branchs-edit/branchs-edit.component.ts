@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BranchService } from '../branch.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { branchCreateDTO, branchDTO } from '../branch';
@@ -8,7 +8,7 @@ import { branchCreateDTO, branchDTO } from '../branch';
   templateUrl: './branchs-edit.component.html',
   styleUrls: ['./branchs-edit.component.css'],
 })
-export class BranchsEditComponent {
+export class BranchsEditComponent implements OnInit {
   model: branchDTO;
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class BranchsEditComponent {
         },
         () => this.router.navigate(['/branchs'])
       );
-    });
+    }); 
   }
   saveChanges(branchDTO: branchCreateDTO) {
     this.branchService.edit(this.model.CodeBranch, branchDTO).subscribe(() => {
