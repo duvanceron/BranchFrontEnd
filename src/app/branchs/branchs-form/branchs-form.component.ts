@@ -19,31 +19,31 @@ export class BranchsFormComponent implements OnInit {
   onSubmit: EventEmitter<branchCreateDTO> = new EventEmitter<branchCreateDTO>();
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      DescriptionBranch: [
+      descriptionBranch: [
         '',
         {
           validators: [Validators.required, Validators.maxLength(250)],
         },
       ],
-      AdressBranch: [
+      adressBranch: [
         '',
         {
           validators: [Validators.required, Validators.maxLength(250)],
         },
       ],
-      IdentificationBranch: [
+      identificationBranch: [
         '',
         {
           validators: [Validators.required, Validators.maxLength(50)],
         },
       ],
-      DateBranch: [
+      dateBranch: [
         '',
         {
           validators: [],
         },
       ],
-      FKMoneyBranch: [
+      fkMoneyBranch: [
         '',
         {
           validators: [],
@@ -58,12 +58,12 @@ export class BranchsFormComponent implements OnInit {
     }
   }
   getErrorName() {
-    let field = this.form.get('DescriptionBranch');
+    let field = this.form.get('descriptionBranch');
     this.error = this.getErrorField(field);
     return this.error;
   }
   getErrorAdress() {
-    let field = this.form.get('AdressBranch');
+    let field = this.form.get('adressBranch');
     this.error = this.getErrorField(field);
     return this.error;
   }

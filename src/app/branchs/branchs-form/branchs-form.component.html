@@ -1,26 +1,26 @@
 <form [formGroup]="form" (submit)="saveChanges()">
   <mat-form-field appearance="outline">
     <mat-label>Descripcion</mat-label>
-    <input formControlName="DescriptionBranch" matInput />
+    <input formControlName="descriptionBranch" matInput />
     <mat-error *ngIf="form.invalid">{{ getErrorName() }}</mat-error>
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Dirección</mat-label>
-    <input formControlName="AdressBranch" matInput />
+    <input formControlName="adressBranch" matInput />
     <mat-error *ngIf="form.invalid">{{ getErrorAdress() }}</mat-error>
     <mat-icon matSuffix>directions</mat-icon>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Identificación</mat-label>
-    <input formControlName="IdentificationBranch" matInput />
+    <input formControlName="identificationBranch" matInput />
     <mat-error *ngIf="form.invalid">{{ getErrorField() }}</mat-error>
     <mat-icon matSuffix>perm_identity</mat-icon>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Fecha de creación</mat-label>
-    <input formControlName="DateBranch" matInput [matDatepicker]="picker" />
+    <input formControlName="dateBranch" matInput [matDatepicker]="picker" />
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
     <mat-error>Fecha de nacimiento es requerido</mat-error>
@@ -28,7 +28,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Moneda</mat-label>
-    <input formControlName="FKMoneyBranch" matInput />
+    <input formControlName="fkMoneyBranch" matInput />
     <mat-error *ngIf="form.invalid">{{ getErrorField() }}</mat-error>
     <mat-icon matSuffix>attach_money</mat-icon>
   </mat-form-field>  
