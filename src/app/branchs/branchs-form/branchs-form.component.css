@@ -1,0 +1,14 @@
+button{
+    margin-right: 1rem;
+}
+mat-form-field{
+    width: 100%;
+    max-width: 500px;
+
+}
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+}    

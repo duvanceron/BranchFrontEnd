@@ -1,0 +1,9 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    max-width: 600px;
+}    
+/* h2{
+    text-align: center;
+} */
