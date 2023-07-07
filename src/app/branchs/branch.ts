@@ -1,14 +1,14 @@
 export interface branchCreateDTO {
-  DescriptionBranch: string;
-  AdressBranch: string;
-  IdentificationBranch: string;
+  descriptionBranch: string;
+  adressBranch: string;
+  identificationBranch: string;
 }
 
 export interface branchDTO {
-  CodeBranch: number;
-  DescriptionBranch: string;
-  AdressBranch: string;
-  IdentificationBranch: string;
-  DateBranch:Date;
-  FKMoneyBranch:number;
+  codeBranch: number;
+  descriptionBranch: string;
+  adressBranch: string;
+  identificationBranch: string;
+  dateBranch:Date;
+  fkMoneyBranch:number;
 }

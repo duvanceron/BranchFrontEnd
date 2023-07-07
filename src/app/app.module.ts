@@ -18,7 +18,9 @@ import { CoinsFormComponent } from './coins/coins-form/coins-form.component';
 import { CoinsCreateComponent } from './coins/coins-create/coins-create.component';
 import { CoinsListComponent } from './coins/coins-list/coins-list.component';
 import { CoinsEditComponent } from './coins/coins-edit/coins-edit.component';
-import { BranchsEditComponent } from './branchs/branchs-edit/branchs-edit.component'; 
+import { BranchsEditComponent } from './branchs/branchs-edit/branchs-edit.component';
+import { ErrorShowComponent } from './utilities/error-show/error-show.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { BranchsEditComponent } from './branchs/branchs-edit/branchs-edit.compon
     CoinsCreateComponent,
     CoinsListComponent,
     CoinsEditComponent,
-    BranchsEditComponent
+    BranchsEditComponent,
+    ErrorShowComponent
   ],
   imports: [
     BrowserModule,

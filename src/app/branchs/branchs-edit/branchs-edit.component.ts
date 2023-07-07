@@ -26,7 +26,7 @@ export class BranchsEditComponent implements OnInit {
     }); 
   }
   saveChanges(branchDTO: branchCreateDTO) {
-    this.branchService.edit(this.model.CodeBranch, branchDTO).subscribe(() => {
+    this.branchService.edit(this.model.codeBranch, branchDTO).subscribe(() => {
       this.router.navigate(['/branchs']);
     },error => console.log(error));
   }

@@ -21,12 +21,16 @@
             <ng-container matColumnDef="dateBranch">
                 <th mat-header-cell *matHeaderCellDef> Fecha de Creacion </th>
                 <td mat-cell *matCellDef="let element"> {{element.dateBranch| date:"MM/dd/yy"}} </td>
-            </ng-container>
+            </ng-container>   
+            <ng-container matColumnDef="fkMoneyBranch">
+                <th mat-header-cell *matHeaderCellDef>Moneda </th>
+                <td mat-cell *matCellDef="let element"> {{element.fkMoneyBranch}} </td>
+            </ng-container>            
             <ng-container matColumnDef="options">
                 <th mat-header-cell *matHeaderCellDef><mat-icon>settings</mat-icon><mat-icon>settings</mat-icon></th>
                 <td mat-cell *matCellDef="let element">
-                    <a href="" mat-flat-button color="primary">Edit</a>
-                    <button mat-flat-button color="warn" type="button">
+                    <a routerLink="/branchs/edit/{{element.codeBranch}}" mat-flat-button color="primary">Edit</a>
+                    <button mat-flat-button color="warn" (click)="deleteBranch(element.codeBranch)" type="button">
                         Delete
                     </button>
                 </td>

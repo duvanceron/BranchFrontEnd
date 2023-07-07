@@ -1,4 +1,4 @@
 <div class="contenedor">
   <h2>Edit Sucursal</h2>
-  <app-branchs-form *ngIf="model" [model]="model"></app-branchs-form>
+  <app-branchs-form *ngIf="model" [model]="model" (onSubmit)="saveChanges($event)"></app-branchs-form>
 </div>

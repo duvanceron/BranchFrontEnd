@@ -10,18 +10,25 @@ import { BranchService } from '../branch.service';
 export class BranchsListComponent implements OnInit {
   constructor(private branchService: BranchService) {}
   branchs: branchDTO[];
-  displayedColumns: string[] = ['codeBranch','descriptionBranch','adressBranch','identificationBranch','dateBranch','options'];
+
+  displayedColumns: string[] = [
+    'codeBranch',
+    'descriptionBranch',
+    'adressBranch',
+    'identificationBranch',
+    'dateBranch',
+    'fkMoneyBranch',
+    'options',
+  ];
   ngOnInit(): void {
     this.branchService.getAll().subscribe(
       (branch) => {
-        
         this.branchs = branch;
-        console.log(this.branchs )
-
       },
       (error) => console.log(error)
     );
   }
-
-  
+  deleteBranch(id: number) {
+    this.branchService.delete(id).subscribe(() => {});
+  }
 }

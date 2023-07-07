@@ -26,4 +26,8 @@ export class BranchService {
     return this.http.put(`${this.apiURL}/${id}`,branch);
     
   }
+  public delete(id:number){
+    return this.http.delete(`${this.apiURL}/${id}`);
+    
+  }
 }

@@ -11,3 +11,7 @@ export interface coinCreateDTO {
     StateCoin:Date;
   }
   
+  export interface coinBox{
+    IdCoin: number;
+    NameCoin: string;
+  }
